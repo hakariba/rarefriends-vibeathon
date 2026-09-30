@@ -4,7 +4,7 @@ The joy of riding a bicycle, made into a game, with your Rare Friend riding alon
 
 **Builder:** hakari · **Contact:** X [@hakariba](https://x.com/hakariba) · **Category:** Character Spotlight (also relevant: Economy Potential, design only) · **SDK:** FriendSDK v0.1.4
 
-[Play the preview](https://hakariba.github.io/friendsdk/) · [Source code](https://github.com/hakariba/friendsdk/tree/1e767ed179711d71a4a60e41393d3cf2953d3f05/games/ride-along) · [Game README](https://github.com/hakariba/friendsdk/blob/1e767ed179711d71a4a60e41393d3cf2953d3f05/games/ride-along/README.md)
+[Play the preview](https://hakariba.github.io/friendsdk/) · [Source code](https://github.com/hakariba/friendsdk/tree/28516226623dd4ade481002ed4e37d5c6e2dcbea/games/ride-along) · [Game README](https://github.com/hakariba/friendsdk/blob/28516226623dd4ade481002ed4e37d5c6e2dcbea/games/ride-along/README.md)
 
 | | |
 | --- | --- |
@@ -15,7 +15,7 @@ The joy of riding a bicycle, made into a game, with your Rare Friend riding alon
 
 Ride Along turns the simple joy of riding a bicycle into a game. At first the bicycle wobbles and you fall; after a few rides it feels easy. Climbs are hard work, and the descents pay you back with pure speed. You pedal by alternating two keys, keep the bicycle upright yourself and steer along a course of just under 900 m: a riverside start, a braking descent with two hairpins, a bridge over the stream, a climb to the summit and a long fast descent to the finish.
 
-Your selected Friend sits in the basket facing you, in its original artwork, and reacts to the ride: it blinks, hums a tune while you ride well, glances wide-eyed at the side you are about to fall to, looks down the road when you cruise, hops for joy when you pick up speed, is thrown out when you fall and climbs back in (shaking itself dry after the river, and wearing a helmet after its third fall). Balance-type Friends lean against the wobble to help; Power-type Friends brace themselves on climbs. At the finish, time slows, the view closes in on your Friend with a name plate, and a card shows your time and rank.
+Your selected Friend sits in the basket facing you, in its original artwork, and reacts to the ride: it blinks, hums a tune while you ride well, glances at the side you are about to fall to, looks down the road when you cruise, hops for joy when you pick up speed, is thrown out when you fall and climbs back in (shaking itself dry after the river, and wearing a plaster after its third fall). Balance-type Friends lean against the wobble to help; Power-type Friends brace themselves on climbs. At the finish, time slows, the view closes in on your Friend with a name plate, and a card shows your time and rank.
 
 It is a game about enjoying the ride itself. But getting from place to place is also how an economy grows, and a slow, analog trip by bicycle could become part of the Rare Friends world. The ideas are sketched under Future ideas below.
 
@@ -32,7 +32,7 @@ To run it locally with Node.js 22+ (the SDK's supported path is Linux or Ubuntu/
 ```sh
 git clone https://github.com/hakariba/friendsdk.git
 cd friendsdk
-git checkout 1e767ed179711d71a4a60e41393d3cf2953d3f05
+git checkout 28516226623dd4ade481002ed4e37d5c6e2dcbea
 npm ci
 npm run build
 npm run dev:game -- games/ride-along
@@ -73,7 +73,7 @@ A transaction can move anything instantly. A bicycle is slow and analog, and tha
 
 - The fork is upstream FriendSDK v0.1.4 (`ca3bf18`) with only `games/ride-along/`, the typecheck config `games/tsconfig.json` and `games/styles.d.ts` added: `npm ci` and `npm run build` pass. (The game was built on v0.1.2 and moved to v0.1.4 on 2026-09-30, when the default public RPC began limiting history queries and v0.1.2 could no longer find owned Friends.)
 - `npx tsc -p games/tsconfig.json --noEmit`: pass
-- `node scripts/dev-game.mjs check games/ride-along`: valid (755,025-byte build)
+- `node scripts/dev-game.mjs check games/ride-along`: valid (754,639-byte build)
 - `node scripts/dev-game.mjs build games/ride-along`: pass; the static output also loads under a sub-path, as on GitHub Pages, with no failed requests or console errors
 - Automated browser checks with the SDK test harness (mocked wallet): falls, restart, consecutive rides with Ride again, the finish sequence with and without reduced motion, audio, no page errors
 - Real-wallet playthrough by the builder on the hosted preview (desktop Chrome): wallet connection, Friend selection and a full ride to the finish in 2:43.0 (on v0.1.2); after the move to v0.1.4, wallet connection and Friend discovery re-checked with a real wallet on the local preview
@@ -89,4 +89,4 @@ A transaction can move anything instantly. A bicycle is slow and analog, and tha
 
 ## Credits
 
-Friend sprites are canonical SDK artwork. In the game, the Friend's eyes close for a blink or widen when it is startled, and a helmet is drawn over its head after three falls; the rest of the artwork is unchanged. Headings and HUD use Silkscreen (SIL Open Font License 1.1), bundled with its licence. All scenery, the bicycle and all sounds are drawn or synthesized in code; there are no other third-party assets. The screenshots were taken in the SDK test harness with its sample Friend #7730. The parcel mockup shows the builder's Friend #95314 as its canonical SDK sprite, unmodified, holding a parcel drawn for the mockup.
+Friend sprites are canonical SDK artwork. In the game, the Friend's eyes close for a blink or widen while it is thrown out, and a small white cross-shaped plaster is drawn on its head after three falls; the rest of the artwork is unchanged. Headings and HUD use Silkscreen (SIL Open Font License 1.1), bundled with its licence. All scenery, the bicycle and all sounds are drawn or synthesized in code; there are no other third-party assets. The screenshots were taken in the SDK test harness with its sample Friend #7730. The parcel mockup shows the builder's Friend #95314 as its canonical SDK sprite, unmodified, holding a parcel drawn for the mockup.
