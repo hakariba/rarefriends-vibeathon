@@ -4,7 +4,7 @@ The joy of riding a bicycle, made into a game, with your Rare Friend riding alon
 
 **Builder:** hakari · **Contact:** X [@hakariba](https://x.com/hakariba) · **Category:** Character Spotlight (also relevant: Economy Potential, design only) · **SDK:** FriendSDK v0.1.4
 
-[Play the preview](https://hakariba.github.io/friendsdk/) · [Source code](https://github.com/hakariba/friendsdk/tree/28516226623dd4ade481002ed4e37d5c6e2dcbea/games/ride-along) · [Game README](https://github.com/hakariba/friendsdk/blob/28516226623dd4ade481002ed4e37d5c6e2dcbea/games/ride-along/README.md)
+[Play the preview](https://hakariba.github.io/friendsdk/) · [Source code](https://github.com/hakariba/friendsdk/tree/2949e6afb80d48917019dc3380f0891c6f03fbf7/games/ride-along) · [Game README](https://github.com/hakariba/friendsdk/blob/2949e6afb80d48917019dc3380f0891c6f03fbf7/games/ride-along/README.md)
 
 | | |
 | --- | --- |
@@ -32,7 +32,7 @@ To run it locally with Node.js 22+ (the SDK's supported path is Linux or Ubuntu/
 ```sh
 git clone https://github.com/hakariba/friendsdk.git
 cd friendsdk
-git checkout 28516226623dd4ade481002ed4e37d5c6e2dcbea
+git checkout 2949e6afb80d48917019dc3380f0891c6f03fbf7
 npm ci
 npm run build
 npm run dev:game -- games/ride-along
@@ -73,7 +73,7 @@ A transaction can move anything instantly. A bicycle is slow and analog, and tha
 
 - The fork is upstream FriendSDK v0.1.4 (`ca3bf18`) with only `games/ride-along/`, the typecheck config `games/tsconfig.json` and `games/styles.d.ts` added: `npm ci` and `npm run build` pass. (The game was built on v0.1.2 and moved to v0.1.4 on 2026-09-30, when the default public RPC began limiting history queries and v0.1.2 could no longer find owned Friends.)
 - `npx tsc -p games/tsconfig.json --noEmit`: pass
-- `node scripts/dev-game.mjs check games/ride-along`: valid (754,639-byte build)
+- `node scripts/dev-game.mjs check games/ride-along`: valid (754,620-byte build)
 - `node scripts/dev-game.mjs build games/ride-along`: pass; the static output also loads under a sub-path, as on GitHub Pages, with no failed requests or console errors
 - Automated browser checks with the SDK test harness (mocked wallet): falls, restart, consecutive rides with Ride again, the finish sequence with and without reduced motion, audio, no page errors
 - Real-wallet playthrough by the builder on the hosted preview (desktop Chrome): wallet connection, Friend selection and a full ride to the finish in 2:43.0 (on v0.1.2); after the move to v0.1.4, wallet connection and Friend discovery re-checked with a real wallet on the local preview
